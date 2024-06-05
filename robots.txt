@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cache/
+Disallow: /storage/
+Disallow: /database/
+Disallow: /vendor/
