@@ -20,7 +20,6 @@ if(!empty($generalSetting)){
         </div>
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>
-
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="input-group mb-3">
@@ -86,18 +85,6 @@ if(!empty($generalSetting)){
                     <!-- /.col -->
                 </div>
             </form>
-
-            {{-- <div class="social-auth-links text-center">
-                <a href="#" class="btn btn-block btn-primary">
-                    <i class="fab fa-facebook mr-2"></i>
-                    Sign up using Facebook
-                </a>
-                <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i>
-                    Sign up using Google+
-                </a>
-            </div> --}}
-
             <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
         </div>
         <!-- /.form-box -->

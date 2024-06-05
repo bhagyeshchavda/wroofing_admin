@@ -8,12 +8,14 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        @if(env('APP_FRONTEND_URL'))
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="nav-link" target="_blank" href="{{ route('home') }}">
-                {{-- {{ __('Logout') }} --}}
+            <a class="nav-link" target="_blank" href="{{ env('APP_FRONTEND_URL') }}">
                 <i class="fas fa-external-link-alt"></i>
             </a>
         </li>
+        @endif
+
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
