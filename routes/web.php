@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 /* start 301 pages */
 Route::redirect('/home', '/', 301);
+Route::redirect('/register', '/login', 301);
 /* end 301 pages */
 
 Route::get('/', [FontendController::class, 'index'])->name('home');
@@ -106,4 +107,3 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::post('/post-type/contacts/bulk-action', [ContactController::class, 'bulkActionContact'])->name('post-type.bulk-action-contacts');
     /* END MODULES */
 });
-/* END FRONTEND */

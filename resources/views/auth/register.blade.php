@@ -1,10 +1,22 @@
 @extends('layouts.auth')
 @section('title') {{'Register a new membership'}} @endsection
 @section('content')
+@php 
+$generalSetting = get_general_settings();
+$siteLogo       = '';
+if(!empty($generalSetting)){
+    if(isset($generalSetting['gs_adminlogo'])){
+        $siteLogo       = $generalSetting['gs_adminlogo'];
+        $siteLogo       = $siteLogo ? $siteLogo : '';
+    }
+}
+@endphp
 <div class="register-box">
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="{{ route('home') }}" class="h1" target="_blank">
+                <img src="{{ asset($siteLogo) }}" alt="site-logo" width="250"/>
+            </a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>
