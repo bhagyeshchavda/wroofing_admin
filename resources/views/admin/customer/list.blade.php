@@ -31,7 +31,16 @@
                 <div class="col-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title float-none float-sm-left mb-3">Customer List</h3>
+                            <div class="col-md-3">
+                                <h3 class="card-title float-none float-sm-left mb-3">Customer List</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="box-button">
+                                    <a href="" class="btn-excel-export">
+                                        <i class="fas fa-file-excel"></i> Export Customer Data
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="card-body">
@@ -238,13 +247,13 @@
                 fnInitComplete: function(oSettings, json) {},
                 createdRow: function(row, data, dataIndex) {
                     var avatar = $('td:eq(1) .avatar', row);
-                    console.log(avatar);
+                    // console.log(avatar);
                     if (dataIndex % 2 === 0) {
                         avatar.addClass('avatar-pink');
                     } else {
                         avatar.addClass('avatar-blue');
                     }
-                }
+                },
             });
 
             // Dropdown FilterBy User Type
@@ -265,6 +274,16 @@
                 $row.find('.small-data').show();
                 $row.find('.big-data').hide();
             }); 
+
+            /* ajax excel / pdf */
+            // Bind click events to custom export buttons
+            $('.box-button .btn-excel-export').on('click', function(e){
+                e.preventDefault();
+                console.log('Excel export clicked');
+                // Add your Excel export functionality here
+                // Export to Excel action
+                window.location.href = "{{ route('customer.export.excel') }}";
+            });
         });
     </script>
         <style>
@@ -301,6 +320,43 @@
             .avatar-pink {
                 background-color: #fcd3e1;
                 color: #f66d9b;
+            }
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .box-button a {
+                background-color: #4CAF50; /* Green background */
+                color: white;             /* White text */
+                border: none;             /* No border */
+                padding: 10px 20px;       /* Some padding */
+                margin-left: 10px;        /* Space between buttons */
+                text-decoration: none;    /* Remove underline */
+                display: inline-flex;     /* Align items inline */
+                align-items: center;      /* Center align items */
+                cursor: pointer;          /* Pointer/hand icon */
+                border-radius: 4px;       /* Rounded corners */
+            }
+
+            .box-button a:hover {
+                background-color: #45a049; /* Darker green on hover */
+            }
+
+            .box-button a.btn-pdf-export {
+                background-color: #f44336; /* Red background */
+            }
+
+            .box-button a.btn-pdf-export:hover {
+                background-color: #e53935; /* Darker red on hover */
+            }
+
+            .box-button i {
+                margin-right: 5px; /* Space between icon and text */
+            }
+            .box-button {
+                float: inline-end;
             }
         </style>
 @endsection

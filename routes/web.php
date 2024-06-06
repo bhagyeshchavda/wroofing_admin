@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Front\FontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -106,4 +107,8 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     /* page bulk action */
     Route::post('/post-type/contacts/bulk-action', [ContactController::class, 'bulkActionContact'])->name('post-type.bulk-action-contacts');
     /* END MODULES */
+
+    Route::get('export/customer/excel', [ExportController::class, 'customerExportExcel'])->name('customer.export.excel');
+    Route::get('export/contractor/excel', [ExportController::class, 'contractorExportExcel'])->name('contractor.export.excel');
+
 });
