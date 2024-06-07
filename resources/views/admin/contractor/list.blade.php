@@ -337,41 +337,41 @@
             color: #f66d9b;
         }
         .card-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            .box-button a {
-                background-color: #17864c; /* Green background */
-                color: white;             /* White text */
-                border: none;             /* No border */
-                padding: 10px 20px;       /* Some padding */
-                margin-left: 10px;        /* Space between buttons */
-                text-decoration: none;    /* Remove underline */
-                display: inline-flex;     /* Align items inline */
-                align-items: center;      /* Center align items */
-                cursor: pointer;          /* Pointer/hand icon */
-                border-radius: 4px;       /* Rounded corners */
-            }
+        .box-button a {
+            background-color: #17864c; /* Green background */
+            color: white;             /* White text */
+            border: none;             /* No border */
+            padding: 10px 20px;       /* Some padding */
+            margin-left: 10px;        /* Space between buttons */
+            text-decoration: none;    /* Remove underline */
+            display: inline-flex;     /* Align items inline */
+            align-items: center;      /* Center align items */
+            cursor: pointer;          /* Pointer/hand icon */
+            border-radius: 4px;       /* Rounded corners */
+        }
 
-            .box-button a:hover {
-                background-color: #17864c; /* Darker green on hover */
-            }
+        .box-button a:hover {
+            background-color: #17864c; /* Darker green on hover */
+        }
 
-            .box-button a.btn-pdf-export {
-                background-color: #f44336; /* Red background */
-            }
+        .box-button a.btn-pdf-export {
+            background-color: #f44336; /* Red background */
+        }
 
-            .box-button a.btn-pdf-export:hover {
-                background-color: #e53935; /* Darker red on hover */
-            }
+        .box-button a.btn-pdf-export:hover {
+            background-color: #e53935; /* Darker red on hover */
+        }
 
-            .box-button i {
-                margin-right: 5px; /* Space between icon and text */
-            }
-            .box-button {
-                float: inline-end;
-            }
+        .box-button i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+        .box-button {
+            float: inline-end;
+        }
     </style>
 @endsection
