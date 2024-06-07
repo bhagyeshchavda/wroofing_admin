@@ -328,7 +328,7 @@
             }
 
             .box-button a {
-                background-color: #4CAF50; /* Green background */
+                background-color: #17864c; /* Green background */
                 color: white;             /* White text */
                 border: none;             /* No border */
                 padding: 10px 20px;       /* Some padding */
@@ -341,7 +341,7 @@
             }
 
             .box-button a:hover {
-                background-color: #45a049; /* Darker green on hover */
+                background-color: #17864c; /* Darker green on hover */
             }
 
             .box-button a.btn-pdf-export {
